@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+
+package xfieldmask;
+
+message XFieldMask {
+  option (scalapb.message).extends = "com.tubitv.xfieldmask.XFieldMaskOps";
+  option (scalapb.message).companion_extends = "com.tubitv.xfieldmask.XFieldMaskCompanion";
+
+  repeated int32 fields = 1 [(scalapb.field).collection_type = "scala.collection.immutable.Set"];
+  map<int32, XFieldMask> messages = 2;
+  bool inverse = 3;
+}
