@@ -45,3 +45,5 @@ build/
 
 ### Scala ###
 .bsp/
+/.idea/aws.xml
+/.idea/vcs.xml
