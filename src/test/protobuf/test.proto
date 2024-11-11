@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+
+package xfieldmask.test;
+
+option (scalapb.options) = {
+  package_name: "com.tubitv.xfieldmask.test",
+  flat_package: true
+};
+
+message TestProto {
+  int32 int_field = 1;
+  string string_field = 2;
+  bool bool_field = 3;
+  InnerTestProto inner_field = 4;
+}
+
+message InnerTestProto {
+  int32 int_field = 1;
+  string string_field = 2;
+  bool bool_field = 3;
+  InnerTestProto inner_field = 4;
+}

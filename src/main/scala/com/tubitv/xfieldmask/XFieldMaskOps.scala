@@ -1,6 +1,6 @@
 package com.tubitv.xfieldmask
 
-import xfieldmask.xfieldmask.XFieldMask
+import com.tubitv.xfieldmask.XFieldMask
 
 trait XFieldMaskOps {
   def fields: Set[Int]

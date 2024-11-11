@@ -15,7 +15,13 @@ lazy val root = (project in file("."))
 enablePlugins(ProtocPlugin)
 
 Compile / PB.targets := Seq(
-  scalapb.gen() -> (Compile / sourceManaged).value // ScalaPB generates Scala code from .proto files
+  scalapb.gen() -> (Compile / sourceManaged).value
 )
 
 Compile / PB.protoSources := Seq(sourceDirectory.value / "main" / "protobuf")
+
+Test / PB.targets := Seq(
+  scalapb.gen() -> (Test / sourceManaged).value
+)
+
+Test / PB.protoSources := Seq(sourceDirectory.value / "test" / "protobuf")
